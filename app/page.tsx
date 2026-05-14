@@ -46,13 +46,13 @@ export default function Home() {
       {/* The Scattered Envelopes */}
       <div className="absolute inset-0 z-10 w-full h-full max-w-3xl mx-auto">
         {envelopes.map((env) => (
-          <Envelope 
+          <Envelope
             key={env.id}
             initialX={env.x}
             initialY={env.y}
-            delay={env.delay} 
-            rotate={env.rotate} 
-            onClick={() => setActiveGift(env.id)} 
+            delay={env.delay}
+            rotate={env.rotate}
+            onClick={() => setActiveGift(env.id)}
           />
         ))}
       </div>
@@ -67,14 +67,10 @@ export default function Home() {
             className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/40 backdrop-blur-md touch-none px-4"
           >
             <ScratchCard>
-              <div className="flex flex-col items-center p-4 text-center bg-white w-full h-full">
-                <div className="w-full h-40 bg-gray-100 rounded border border-gray-200 flex items-center justify-center mb-4 overflow-hidden relative shadow-inner">
-                   <span className="text-gray-400 font-serif italic text-sm">Image {activeGift}</span>
+              {/* Pre-Opened Content Layout - Wider Rectangle */}
+                <div className="flex flex-col items-center justify-center w-full h-full p-6 text-center bg-white border border-[#e2dfd8]">
+                  
                 </div>
-                <p className="text-gray-700 font-serif leading-snug text-sm px-2">
-                  {envelopes.find(e => e.id === activeGift)?.message}
-                </p>
-              </div>
             </ScratchCard>
 
             <motion.button
